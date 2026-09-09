@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 
+# Private company practice tests - NEVER pushed to GitHub
+practice-company/
+
 # Playwright output
 test-results/
 playwright-report/
