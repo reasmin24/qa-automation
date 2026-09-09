@@ -1,29 +1,30 @@
-# 🧪 NZiTech B2C — Playwright QA Automation
+# 🧪 Playwright QA Automation — Demo Store
 
-Automated end-to-end tests for the **NZiTech B2C travel portal** (Flight / Hotel / Bus / Train / E-SIM booking web app), built with **Playwright (JavaScript)**.
+Automated end-to-end tests for **[SauceDemo](https://www.saucedemo.com/)** — the public demo e-commerce store used worldwide for QA practice. Built with **Playwright (JavaScript)**.
 
-> Daily smoke tests written by a QA engineer — every test case is derived from real manual test scenarios and bug reports.
+> Every test here mirrors real QA work: positive paths, negative paths, and UI assertions.
 
 ## ✨ Features
 
 - ⚡ **Playwright Test** runner with HTML reporter
-- 🌐 Configurable `baseURL` — point it at any environment (dev / staging / prod)
-- 📸 Automatic screenshots on failure + full-page screenshot capability
-- 🧭 Test scenarios that mirror real QA work: homepage smoke, navigation tabs, visual evidence
+- ✅ Positive + **negative** test cases (locked-out user error handling)
+- 🛒 Core e-commerce flow: login → browse catalog → add to cart → verify cart
+- 📸 Automatic screenshots on failure + evidence screenshots
+- 🌐 Configurable `baseURL` — point it at any environment
 - 🚀 Runs headless in CI or headed locally
 
 ## 🛠️ Tech Stack
 
 - **Node.js** + **Playwright** (`@playwright/test`)
-- Chromium (cross-browser support easy to extend: Firefox, WebKit)
+- Chromium (easy to extend: Firefox, WebKit)
 
 ## 📁 Project Structure
 
 ```
 qa-automation/
 ├── tests/
-│   └── homepage.spec.js      # B2C homepage smoke tests
-├── docs/                     # screenshots / evidence (optional)
+│   └── saucedemo.spec.js    # Login & core shopping flow tests
+├── docs/                     # screenshots / evidence
 ├── playwright.config.js      # runner config
 └── package.json
 ```
@@ -44,15 +45,14 @@ npx playwright test --headed
 npx playwright show-report
 ```
 
-## 🧪 What is covered (so far)
+## 🧪 Test Coverage
 
-| Test | What it verifies |
-|---|---|
-| Homepage loads | Title, main nav, search form, footer render correctly |
-| Tab switching | Hotels tab in booking widget switches properly |
-| Visual evidence | Full-page screenshot of homepage for review |
-
-*More suites coming: flight search flow, partner logo display check, form validation, API-level tests.*
+| Test | Type | What it verifies |
+|---|---|---|
+| Login page loads | Positive | Branding + all form fields visible |
+| Valid login | Positive | 6 products shown in catalog |
+| Add to cart | Positive | Cart badge updates, item present in cart |
+| Locked-out user | Negative | Expected error message displayed |
 
 ## 👩‍💻 Author
 

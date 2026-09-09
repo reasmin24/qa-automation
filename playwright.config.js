@@ -2,7 +2,7 @@
 const { defineConfig, devices } = require('@playwright/test');
 
 /**
- * QA Automation config - NZiTech B2C travel portal
+ * QA Automation config - demo e-commerce store (SauceDemo - public practice app)
  * Run: npx playwright test
  * UI mode: npx playwright test --ui
  */
@@ -14,7 +14,7 @@ module.exports = defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: [['html', { open: 'never' }], ['list']],
   use: {
-    baseURL: 'https://test-cms--nz-b2c.netlify.app/',
+    baseURL: 'https://www.saucedemo.com/',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
