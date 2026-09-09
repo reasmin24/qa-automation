@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Playwright output
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Screenshots & local artifacts
+*.png
+*.jpg
+*.jpeg
+!docs/**/*.png
+
+# Logs & OS files
+*.log
+.DS_Store
+Thumbs.db
